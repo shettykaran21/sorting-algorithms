@@ -26,7 +26,7 @@ void selection_sort(vector<int> &v) {
     }
 }
 
-void selection_sort2(vector<int> &v) {
+void selection_sort_2(vector<int> &v) {
     int n = v.size();
 
     for (int i = 0; i < n - 1; ++i) {
