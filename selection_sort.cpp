@@ -4,7 +4,11 @@ using namespace std;
 
 /*
     Select minimum and swap
-    Time -
+
+    Time
+    - Best case - O(n^2)
+    - Average case - O(n^2)
+    - Worst case - O(n^2)
 */
 void selection_sort(vector<int> &v) {
     int n = v.size();
