@@ -6,9 +6,9 @@ using namespace std;
     Move largest element to last by adjacent swaps
 
     Time
-    - Best case - O(n) (Best case is when array is already sorted)
-    - Average case - O(n^2)
-    - Worst case - O(n^2)
+    - Best case - O(n) (When array is already sorted)
+    - Average case - O(n^2) (If the list is randomly ordered)
+    - Worst case - O(n^2) (If the list is in reverse order)
 */
 void bubble_sort(vector<int> &v) {
     int n = v.size();
