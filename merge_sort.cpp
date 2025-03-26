@@ -44,6 +44,12 @@ void merge(vector<int> &v, int low, int mid, int high) {
     }
 }
 
+/*
+    Time
+
+    Time - O(nlogn)
+    Space - O(n)
+*/
 void merge_sort(vector<int> &v, int low, int high) {
     if (low >= high) {
         return;
