@@ -8,10 +8,13 @@ int partition(vector<int> &v, int low, int high) {
     int i = low, j = high;
 
     while (i < j) {
-        while (v[i] <= pivot && i <= high) {
+        // Move i till it's <= pivot. i.e. after this, i will be pointing to the el > pivot
+        while (i <= high && v[i] <= pivot) {
             i++;
         }
-        while (v[j] > pivot && j >= low) {
+
+        // Move j till it's > pivot. i.e. after this, j will be pointing to the el <= pivot
+        while (j >= low && v[j] > pivot) {
             j--;
         }
 
@@ -20,9 +23,22 @@ int partition(vector<int> &v, int low, int high) {
         }
     }
 
+    // Place pivot element to its correct place
     swap(v[low], v[j]);
 
     return j;
+}
+
+// Pick random element and swap it with first element
+// In case of choosing first element as pivot, worst case is when array is in descending order.
+// In case of choosing last element as pivot, worst case is when array is in ascending order (already sorted).
+int partition_r(vector<int> &v, int low, int high) {
+    srand(time(NULL));
+    int random = low + rand() % (high - low);
+
+    swap(v[random], v[low]);
+
+    return partition(v, low, high);
 }
 
 /*
@@ -33,7 +49,7 @@ int partition(vector<int> &v, int low, int high) {
 */
 void quick_sort(vector<int> &v, int low, int high) {
     if (low < high) {
-        int pi = partition(v, low, high);
+        int pi = partition_r(v, low, high);
 
         quick_sort(v, low, pi - 1);
         quick_sort(v, pi + 1, high);
@@ -46,7 +62,7 @@ void solve(vector<int> &v) {
 }
 
 int main() {
-    vector<int> v = {10, 9, 7, 8, 1};
+    vector<int> v = {5, 2, 3, 1};
 
     solve(v);
 
