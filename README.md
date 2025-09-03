@@ -5,3 +5,5 @@
 3. [Insertion Sort](insertion_sort.cpp)
 4. [Merge Sort](merge_sort.cpp)
 5. [Quick Sort](quick_sort.cpp)
+
+Note: Think what has to be done for a single loop, then repeat that process.
